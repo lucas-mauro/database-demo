@@ -30,7 +30,7 @@ public class SpringJdbcDemoApplication implements CommandLineRunner {
 		logger.info("Deleting  10002 --> Nro of rows deleted - {} " + personJdbcDao.deleteById(10002));
 		logger.info("Inserting  10004 --> {} " + personJdbcDao.insert(new Person(10004, "Lucho", "Montalti", new Date())));
 		logger.info("Updating  10003 --> {} " + personJdbcDao.update(new Person(10003, "Charly", "Magna", new Date())));
-	} 
+	}
 
 }
 
