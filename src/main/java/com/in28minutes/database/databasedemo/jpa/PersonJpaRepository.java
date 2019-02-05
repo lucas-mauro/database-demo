@@ -1,5 +1,7 @@
 package com.in28minutes.database.databasedemo.jpa;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -17,7 +19,8 @@ public class PersonJpaRepository {
 	EntityManager entityManager;
 	
 	public List<Person> findAll(){
-		TypedQuery<Person> namedQuery = entityManager.createNamedQuery("find_all_person");
+		TypedQuery<Person> namedQuery = entityManager.createNamedQuery("find_all_persons", Person.class);
+		return namedQuery.getResultList();
 	}
 	
 	public Person findById(int id) {
